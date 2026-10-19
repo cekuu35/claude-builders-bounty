@@ -15,6 +15,8 @@ BLOCK_RULES = (
     ("rm -rf", re.compile(r"\brm\s+(?:-[^\n]*f[^\n]*|--force[^\n]*)\s+", re.IGNORECASE)),
     ("DROP TABLE", re.compile(r"\bdrop\s+table\b", re.IGNORECASE)),
     ("TRUNCATE", re.compile(r"\btruncate(?:\s+table)?\b", re.IGNORECASE)),
+    ("git push --force", re.compile(r"\bgit\s+push\b[^\n]*--force\b", re.IGNORECASE)),
+    ("git push -f", re.compile(r"\bgit\s+push\b[^\n]*\s-f\b", re.IGNORECASE)),
 )
 DELETE_WITHOUT_WHERE = re.compile(
     r"\bdelete\s+from\b(?![^;\n]*\bwhere\b)", re.IGNORECASE
